@@ -1,6 +1,8 @@
 import pygame
 from bullet import Bullet
 
+pygame.mixer.init()
+
 
 class Spaceship:
     def __init__(
@@ -64,6 +66,8 @@ class Spaceship:
 
     def shoot(self):
         if len(self.bullets) < self.__max_bullets:
+            pygame.mixer.music.load("Assets/Gun-Fire.wav")
+            pygame.mixer.music.play()
             if self.__placement == "right":
                 self.bullets.append(
                     Bullet(
