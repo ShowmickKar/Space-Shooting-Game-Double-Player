@@ -44,7 +44,7 @@ bullet_2_img = pygame.transform.rotate(
 )
 
 FPS = 60
-INITIAL_HEALTH = 100
+INITIAL_HEALTH = 10
 VELOCITY = 7
 MAX_BULLETS = 3
 BULLET_VELOCITY = 15
