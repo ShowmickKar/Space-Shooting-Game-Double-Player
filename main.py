@@ -1,12 +1,16 @@
 import pygame
 import os
 from spaceship import Spaceship
+from pygame import mixer
 
 pygame.init()
 pygame.font.init()
+mixer.init()
 myfont = pygame.font.SysFont("Comic Sans MS", 30)
 big_font = pygame.font.SysFont("Comic Sans MS", 70)
 
+BACKGROUND_MUSIC = mixer.Sound("Assets/04.JUMP IN THE FIRE.wav")
+BACKGROUND_MUSIC.play()
 
 WIDTH, HEIGHT = 1000, 600
 window = pygame.display.set_mode((WIDTH, HEIGHT))
