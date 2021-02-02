@@ -71,7 +71,12 @@ class Spaceship:
             if self.__placement == "right":
                 self.bullets.append(
                     Bullet(
-                        [self.__position.x, self.__position.y + 10],
+                        [
+                            self.__position.x,
+                            self.__position.y
+                            + self.__size // 2
+                            - self.__bullet_size[0] // 2,
+                        ],
                         self.__bullet_size,
                         -1,
                         self.__bullet_velocity,
@@ -83,7 +88,12 @@ class Spaceship:
             else:
                 self.bullets.append(
                     Bullet(
-                        [self.__position.x, self.__position.y + 10],
+                        [
+                            self.__position.x,
+                            self.__position.y
+                            + self.__size // 2
+                            - self.__bullet_size[0] // 2,
+                        ],
                         self.__bullet_size,
                         1,
                         self.__bullet_velocity,
