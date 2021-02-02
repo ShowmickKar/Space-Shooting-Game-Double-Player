@@ -2,9 +2,10 @@ import pygame
 import os
 from spaceship import Spaceship
 
+pygame.init()
 pygame.font.init()
 myfont = pygame.font.SysFont("Comic Sans MS", 30)
-big_font = pygame.font.SysFont("Comic Sans MS", 60)
+big_font = pygame.font.SysFont("Comic Sans MS", 70)
 
 
 WIDTH, HEIGHT = 1000, 600
@@ -43,7 +44,7 @@ bullet_2_img = pygame.transform.rotate(
 )
 
 FPS = 60
-INITIAL_HEALTH = 10
+INITIAL_HEALTH = 100
 VELOCITY = 7
 MAX_BULLETS = 3
 BULLET_VELOCITY = 15
@@ -67,12 +68,12 @@ def draw(window, left_spaceship, right_spaceship):
 
 def reset(window, winner):
     pygame.time.delay(500)
-    game_over = big_font.render("WINS!", False, (255, 255, 255))
+    game_over = big_font.render("WINS!", False, (255, 255, 0))
     pygame.display.update()
     if winner == 1:
-        window.blit(game_over, (WIDTH // 2 - 300, HEIGHT // 2 - 50))
+        window.blit(game_over, (WIDTH // 2 - 320, HEIGHT // 2 - 50))
     else:
-        window.blit(game_over, (WIDTH - (WIDTH // 2 - 200), HEIGHT // 2 - 50))
+        window.blit(game_over, (WIDTH - (WIDTH // 2 - 180), HEIGHT // 2 - 50))
     pygame.display.update()
     pygame.time.delay(1000)
     main(window)
@@ -143,8 +144,12 @@ def main(window):
         if navigation_key[pygame.K_LEFT]:
             right_spaceship.moveLeft()
         if left_spaceship.collision(right_spaceship):
+            pygame.mixer.music.load("Assets/Collision.wav")
+            pygame.mixer.music.play()
             left_spaceship.healthDecrease()
         if right_spaceship.collision(left_spaceship):
+            pygame.mixer.music.load("Assets/Collision.wav")
+            pygame.mixer.music.play()
             right_spaceship.healthDecrease()
         if left_spaceship.getHealth() <= 0:
             reset(window, 2)
