@@ -89,7 +89,7 @@ class Spaceship:
                 self.bullets.append(
                     Bullet(
                         [
-                            self.__position.x,
+                            self.__position.x + self.__bullet_size[1],
                             self.__position.y
                             + self.__size // 2
                             - self.__bullet_size[0] // 2,
