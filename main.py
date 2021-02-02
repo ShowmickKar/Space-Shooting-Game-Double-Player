@@ -10,7 +10,7 @@ myfont = pygame.font.SysFont("Comic Sans MS", 30)
 big_font = pygame.font.SysFont("Comic Sans MS", 70)
 
 BACKGROUND_MUSIC = mixer.Sound("Assets/04.JUMP IN THE FIRE.wav")
-BACKGROUND_MUSIC.play()
+BACKGROUND_MUSIC.play(-1)
 
 WIDTH, HEIGHT = 1000, 600
 window = pygame.display.set_mode((WIDTH, HEIGHT))
