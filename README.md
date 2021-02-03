@@ -15,7 +15,7 @@ This is a double player space shooting game made with python and pygame.
 
 ## Prerequisites:
 
-- To run the program and mess with code, you need to have pygame installed on your computer. To install pygame, open up your terminal(or Command Prompt if you are on Windows) and type
+- To run the program and mess with the code, you need to have pygame installed on your computer. To install pygame, open up your terminal(or Command Prompt if you are on Windows) and type
 
 ```bash
     pip install pygame
