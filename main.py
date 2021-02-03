@@ -6,7 +6,7 @@ from pygame import mixer
 pygame.init()
 pygame.font.init()
 mixer.init()
-myfont = pygame.font.SysFont("Comic Sans MS", 30)
+myfont = pygame.font.SysFont("Comic Sans MS", 25)
 big_font = pygame.font.SysFont("Comic Sans MS", 70)
 
 BACKGROUND_MUSIC = mixer.Sound("Assets/04.JUMP IN THE FIRE.wav")
@@ -64,7 +64,7 @@ def draw(window, left_spaceship, right_spaceship):
         f"HEALTH: {right_spaceship.getHealth()}", False, (255, 255, 255)
     )
     window.blit(health_player_1, (0, 0))
-    window.blit(health_player_2, (WIDTH - 120, 0))
+    window.blit(health_player_2, (BORDER[0] + 10, 0))
     left_spaceship.draw(window)
     right_spaceship.draw(window)
     pygame.display.update()
