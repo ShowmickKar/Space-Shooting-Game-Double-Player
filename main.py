@@ -9,16 +9,11 @@ mixer.init()
 myfont = pygame.font.SysFont("Comic Sans MS", 25)
 big_font = pygame.font.SysFont("Comic Sans MS", 70)
 
-"""
-    Loads background music
-"""
+# Loads background music
 BACKGROUND_MUSIC = mixer.Sound("Assets/04.JUMP IN THE FIRE.wav")
 BACKGROUND_MUSIC.play(-1)
 
-"""
-    Defines window size
-"""
-
+# Defines window size
 WIDTH, HEIGHT = 1000, 600
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Space Shooting Game")
@@ -30,9 +25,7 @@ BACKGROUND = pygame.transform.scale(
 BORDER = ((WIDTH // 2) - 5, 0, 10, HEIGHT)
 SPACESHIP_SIZE = 65
 
-"""
-    Loads, resizes and rotates spaceship images
-"""
+# Loads, resizes and rotates spaceship images
 spaceship_1 = pygame.transform.rotate(
     pygame.transform.scale(
         pygame.image.load("Assets/spaceship-1.png"), (SPACESHIP_SIZE, SPACESHIP_SIZE)
@@ -47,14 +40,10 @@ spaceship_2 = pygame.transform.rotate(
     90,
 )
 
-"""
-    Defines Bullet Dimentions
-"""
+# Defines Bullet Dimentions
 BULLET_SIZE = 50, 40
 
-"""
-    Loads, resizes and rotates bullet images
-"""
+# Loads, resizes and rotates bullet images
 bullet_1_img = pygame.transform.rotate(
     pygame.transform.scale(pygame.image.load("Assets/Bullet-1.png"), BULLET_SIZE),
     270,
@@ -94,9 +83,7 @@ def draw(window, left_spaceship, right_spaceship):
     pygame.display.update()
 
 
-""" Displays winning messege and restarts the game """
-
-
+# Displays winning messege and restarts the game
 def reset(window, winner):
     pygame.time.delay(500)
     game_over = big_font.render("WINS!", False, (255, 255, 0))
@@ -110,9 +97,7 @@ def reset(window, winner):
     main(window)
 
 
-""" Main game function that takes player inputs and handles all the game logic """
-
-
+# Main game function that takes player inputs and handles all the game logic
 def main(window):
     clock = pygame.time.Clock()
     run = True

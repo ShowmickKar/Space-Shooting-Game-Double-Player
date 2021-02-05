@@ -37,10 +37,7 @@ class Spaceship:
         self.window_width = WIDTH
         self.window_height = HEIGHT
 
-    """ 
-        Handles player movement
-    """
-
+    # Handles player movement
     def moveUp(self):
         if self.__position.y - self.__velocity >= 0:
             self.__position.y -= self.__velocity
@@ -68,10 +65,7 @@ class Spaceship:
             if self.__position.x - self.__velocity >= 0:
                 self.__position.x -= self.__velocity
 
-    """
-        Handles shooting bullets
-    """
-
+    # Handles shooting bullets
     def shoot(self):
         if len(self.bullets) < self.__max_bullets:
             pygame.mixer.music.load("Assets/Gun-Fire.wav")
