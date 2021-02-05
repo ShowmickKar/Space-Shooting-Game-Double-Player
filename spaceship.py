@@ -37,6 +37,10 @@ class Spaceship:
         self.window_width = WIDTH
         self.window_height = HEIGHT
 
+    """ 
+        Handles player movement
+    """
+
     def moveUp(self):
         if self.__position.y - self.__velocity >= 0:
             self.__position.y -= self.__velocity
@@ -63,6 +67,10 @@ class Spaceship:
         else:
             if self.__position.x - self.__velocity >= 0:
                 self.__position.x -= self.__velocity
+
+    """
+        Handles shooting bullets
+    """
 
     def shoot(self):
         if len(self.bullets) < self.__max_bullets:
@@ -112,7 +120,7 @@ class Spaceship:
     def healthDecrease(self):
         self.__health -= 1
 
-    def collision(self, opponent):
+    def collision(self, opponent):  # Detects Collision
         for bullet in opponent.bullets:
             if self.__position.colliderect(bullet.getPosition()):
                 opponent.bullets.remove(bullet)
